@@ -1,0 +1,5 @@
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\DAL\bin\Debug\DAL.dll
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\DAL\bin\Debug\DAL.pdb
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\DAL\obj\Debug\DAL.dll
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\DAL\obj\Debug\DAL.pdb

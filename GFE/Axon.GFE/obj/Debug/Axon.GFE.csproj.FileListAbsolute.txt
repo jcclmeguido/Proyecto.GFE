@@ -1,0 +1,12 @@
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\bin\Debug\Axon.GFE.dll
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\bin\Debug\Axon.GFE.pdb
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\bin\Debug\DAL.dll
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\bin\Debug\Newtonsoft.Json.dll
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\bin\Debug\DAL.pdb
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\bin\Debug\Newtonsoft.Json.pdb
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\bin\Debug\Newtonsoft.Json.xml
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\obj\Debug\Axon.GFE.csprojAssemblyReference.cache
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\obj\Debug\Axon.GFE.csproj.CoreCompileInputs.cache
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\obj\Debug\Axon.GFE.csproj.CopyComplete
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\obj\Debug\Axon.GFE.dll
+D:\Proyectos\FacturacionEletronica\GFE 05062016\GFE\Axon.GFE\obj\Debug\Axon.GFE.pdb

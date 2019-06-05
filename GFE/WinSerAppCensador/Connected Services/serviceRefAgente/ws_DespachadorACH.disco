@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://200.87.229.163/ite/ws_DespachadorACH.asmx?wsdl" docRef="http://200.87.229.163/ite/ws_DespachadorACH.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://200.87.229.163/ite/ws_DespachadorACH.asmx" xmlns:q1="http://axon.com.bo/" binding="q1:ws_DespachadorACHSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://200.87.229.163/ite/ws_DespachadorACH.asmx" xmlns:q2="http://axon.com.bo/" binding="q2:ws_DespachadorACHSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

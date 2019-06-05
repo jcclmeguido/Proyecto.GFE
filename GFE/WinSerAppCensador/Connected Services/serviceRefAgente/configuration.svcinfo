@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;ws_DespachadorACHSoap&quot; /&gt;" bindingType="basicHttpBinding" name="ws_DespachadorACHSoap" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://200.87.229.163/ite/ws_DespachadorACH.asmx&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ws_DespachadorACHSoap&quot; contract=&quot;serviceRefAgente.ws_DespachadorACHSoap&quot; name=&quot;ws_DespachadorACHSoap&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://200.87.229.163/ite/ws_DespachadorACH.asmx&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ws_DespachadorACHSoap&quot; contract=&quot;serviceRefAgente.ws_DespachadorACHSoap&quot; name=&quot;ws_DespachadorACHSoap&quot; /&gt;" contractName="serviceRefAgente.ws_DespachadorACHSoap" name="ws_DespachadorACHSoap" />
+  </endpoints>
+</configurationSnapshot>

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://axon.com.bo/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://axon.com.bo/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://axon.com.bo/">
+      <s:element name="ObtenerOrdenes1A">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerOrdenes1AResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerOrdenes1AResult" type="tns:Mensaje1A" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Mensaje1A">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_ach" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo_mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_pais_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sucursal_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_pais_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_moneda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="importe" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo_documento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_orden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_procedimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_cuenta_origen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_cuenta_destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_camara" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fec_camara" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cuenta_origen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cuenta_destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ci_nit_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titular_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ci_nit_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titular_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sub_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sub_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="glosa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origen_fondos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destino_fondos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_servicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="canal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo_operacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_participante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuarioMT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_response" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_response" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="delivery_time" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="clearing_house" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ordenes" type="tns:ArrayOfOrden" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrden">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Orden" type="tns:Orden" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Orden">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sucursal_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sub_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_moneda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_cuenta_origen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_cuenta_destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cuenta_origen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cuenta_destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="canal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_procedimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo_documento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ci_nit_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titular_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ci_nit_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titular_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origen_fondos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destino_fondos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="glosa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_servicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_ach" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_camara" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_orden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sucursal_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_pais_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuarioMT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="importe" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmacionSalidaOrden1B">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje1B" type="tns:Mensaje1B" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Mensaje1B">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_ach" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_camara" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_respuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="texto_respuesta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmacionSalidaOrden1BResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConfirmacionSalidaOrden1BResult" type="tns:Respuesta1B" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta1B">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_response" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_response" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EntregarOrdenEntrante2A">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje2A" type="tns:Mensaje2A" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Mensaje2A">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_ach" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_camara" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sub_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sucursal_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sub_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_moneda" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="importe" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_cuenta_origen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_cuenta_destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cuenta_origen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cuenta_destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="canal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_procedimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo_documento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ci_nit_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titular_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ci_nit_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titular_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origen_fondos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destino_fondos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="glosa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_servicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_pais_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_orden" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fec_camara" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_pais_destinatario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EntregarOrdenEntrante2AResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntregarOrdenEntrante2AResult" type="tns:Mensaje3A" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Mensaje3A">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_response" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_response" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Orden" type="tns:OrdenStruct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdenStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_respuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sucursal_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titular_destinatario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarOrdenEntrante3B">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Orden" type="tns:Orden3B" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Orden3B">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_ach" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error_mensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarOrdenEntrante3BResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConfirmarOrdenEntrante3BResult" type="tns:Respuesta3B" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta3B">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_response" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_response" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarOrdenSaliente4A">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje4A" type="tns:Mensaje4A" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Mensaje4A">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_ach" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_respuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="texto_respuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titular_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tip_orden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_sucursal_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_pais_destinatario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarOrdenSaliente4AResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConfirmarOrdenSaliente4AResult" type="tns:Respuesta4A" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta4A">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_response" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_response" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ErrorOrden5A">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje5A" type="tns:Mensaje5A" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Mensaje5A">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_ach" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_originante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="num_orden_destinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_respuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="texto_respuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="titular_destinatario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ErrorOrden5AResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorOrden5AResult" type="tns:Respuesta5A" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta5A">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_response" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_response" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerificarFeriado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fechaTicks" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificarFeriadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificarFeriadoResult" type="tns:Feriado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Feriado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_reponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_response" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dayoff" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerOrdenes1ASoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerOrdenes1A" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerOrdenes1ASoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerOrdenes1AResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmacionSalidaOrden1BSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmacionSalidaOrden1B" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmacionSalidaOrden1BSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmacionSalidaOrden1BResponse" />
+  </wsdl:message>
+  <wsdl:message name="EntregarOrdenEntrante2ASoapIn">
+    <wsdl:part name="parameters" element="tns:EntregarOrdenEntrante2A" />
+  </wsdl:message>
+  <wsdl:message name="EntregarOrdenEntrante2ASoapOut">
+    <wsdl:part name="parameters" element="tns:EntregarOrdenEntrante2AResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarOrdenEntrante3BSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarOrdenEntrante3B" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarOrdenEntrante3BSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarOrdenEntrante3BResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarOrdenSaliente4ASoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarOrdenSaliente4A" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarOrdenSaliente4ASoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarOrdenSaliente4AResponse" />
+  </wsdl:message>
+  <wsdl:message name="ErrorOrden5ASoapIn">
+    <wsdl:part name="parameters" element="tns:ErrorOrden5A" />
+  </wsdl:message>
+  <wsdl:message name="ErrorOrden5ASoapOut">
+    <wsdl:part name="parameters" element="tns:ErrorOrden5AResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificarFeriadoSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificarFeriado" />
+  </wsdl:message>
+  <wsdl:message name="VerificarFeriadoSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificarFeriadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ws_DespachadorACHSoap">
+    <wsdl:operation name="ObtenerOrdenes1A">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Mensaje 1A = Lee y envía todas las pendientes que hay en el CORE y al cliente ACH.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerOrdenes1ASoapIn" />
+      <wsdl:output message="tns:ObtenerOrdenes1ASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacionSalidaOrden1B">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">El Cliente ACH envía datos del mensaje 1B al CORE para su registro.</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmacionSalidaOrden1BSoapIn" />
+      <wsdl:output message="tns:ConfirmacionSalidaOrden1BSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EntregarOrdenEntrante2A">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recibe el Mensaje 2A y devuelve un Mensaje 3A.</wsdl:documentation>
+      <wsdl:input message="tns:EntregarOrdenEntrante2ASoapIn" />
+      <wsdl:output message="tns:EntregarOrdenEntrante2ASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarOrdenEntrante3B">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Confirmar orden entrante mensaje 3B</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmarOrdenEntrante3BSoapIn" />
+      <wsdl:output message="tns:ConfirmarOrdenEntrante3BSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarOrdenSaliente4A">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Orden Saliente Mensaje 4A</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmarOrdenSaliente4ASoapIn" />
+      <wsdl:output message="tns:ConfirmarOrdenSaliente4ASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ErrorOrden5A">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Error 5A</wsdl:documentation>
+      <wsdl:input message="tns:ErrorOrden5ASoapIn" />
+      <wsdl:output message="tns:ErrorOrden5ASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarFeriado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifica si una fecha especifica es feriado.</wsdl:documentation>
+      <wsdl:input message="tns:VerificarFeriadoSoapIn" />
+      <wsdl:output message="tns:VerificarFeriadoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ws_DespachadorACHSoap" type="tns:ws_DespachadorACHSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerOrdenes1A">
+      <soap:operation soapAction="http://axon.com.bo/ObtenerOrdenes1A" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacionSalidaOrden1B">
+      <soap:operation soapAction="http://axon.com.bo/ConfirmacionSalidaOrden1B" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EntregarOrdenEntrante2A">
+      <soap:operation soapAction="http://axon.com.bo/EntregarOrdenEntrante2A" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarOrdenEntrante3B">
+      <soap:operation soapAction="http://axon.com.bo/ConfirmarOrdenEntrante3B" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarOrdenSaliente4A">
+      <soap:operation soapAction="http://axon.com.bo/ConfirmarOrdenSaliente4A" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorOrden5A">
+      <soap:operation soapAction="http://axon.com.bo/ErrorOrden5A" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarFeriado">
+      <soap:operation soapAction="http://axon.com.bo/VerificarFeriado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ws_DespachadorACHSoap12" type="tns:ws_DespachadorACHSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerOrdenes1A">
+      <soap12:operation soapAction="http://axon.com.bo/ObtenerOrdenes1A" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacionSalidaOrden1B">
+      <soap12:operation soapAction="http://axon.com.bo/ConfirmacionSalidaOrden1B" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EntregarOrdenEntrante2A">
+      <soap12:operation soapAction="http://axon.com.bo/EntregarOrdenEntrante2A" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarOrdenEntrante3B">
+      <soap12:operation soapAction="http://axon.com.bo/ConfirmarOrdenEntrante3B" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarOrdenSaliente4A">
+      <soap12:operation soapAction="http://axon.com.bo/ConfirmarOrdenSaliente4A" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorOrden5A">
+      <soap12:operation soapAction="http://axon.com.bo/ErrorOrden5A" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarFeriado">
+      <soap12:operation soapAction="http://axon.com.bo/VerificarFeriado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ws_DespachadorACH">
+    <wsdl:port name="ws_DespachadorACHSoap" binding="tns:ws_DespachadorACHSoap">
+      <soap:address location="http://200.87.229.163/ite/ws_DespachadorACH.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ws_DespachadorACHSoap12" binding="tns:ws_DespachadorACHSoap12">
+      <soap12:address location="http://200.87.229.163/ite/ws_DespachadorACH.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
